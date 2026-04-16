@@ -2,14 +2,18 @@
   "version": 2,
   "builds": [
     {
-      "src": "index.js",
+      "src": "api/classify.js",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
-      "src": "/api/(.*)",
-      "dest": "index.js"
+      "src": "/api/classify",
+      "dest": "/api/classify.js"
+    },
+    {
+      "src": "/",
+      "dest": "/api/classify.js"
     }
   ]
 }
